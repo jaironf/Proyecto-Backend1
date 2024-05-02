@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "jJ03101526",
-    "database": "VideoGames Store",
-    "host": "127.0.0.1",
+    "username": "tu usuario",
+    "password": "tu contraseña",
+    "database": "tu base de datos",
+    "host": "tu host",
     "dialect": "mysql"
   },
   "test": {
