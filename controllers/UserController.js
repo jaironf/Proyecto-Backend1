@@ -1,12 +1,26 @@
 const {User} = require('../models/index');
 
 const UserController = {
-    create(req, res) {
-        req.body.role = "user";
-        User.create(req.body)
-            .then(user => res.status(201).send({ message: 'Usuario creado con éxito', user }))
-            .catch(err =>console.error(err))
+    async create(req, res) {
+        try {
+            req.body.role = "user";
+        const user = await User.create(req.body)
+            res.status(201).send({ msg: 'Usuario creado con éxito', user })
+        } catch (error) {
+            console.error(error);
+            res.status(500).send(error)
+        }
+        
     },
+    async getAll(req, res){
+        try {
+            const users = await user.findAll()
+            res.send({msg:'Todos los usuarios', users})
+        } catch (error) {
+            console.error(error);
+            res.status(500).send(error)
+        }
+    }
 }
 
 

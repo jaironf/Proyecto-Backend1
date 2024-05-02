@@ -10,4 +10,4 @@ app.use('/users', require('./routes/users'));
 
 
 
-app.listen(PORT, () => console.log('Servidor levantado en el puerto ' + PORT))
+app.listen(PORT, () => console.log(`Servidor levantado en el puerto ${PORT}`))
