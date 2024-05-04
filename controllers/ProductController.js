@@ -62,6 +62,32 @@ const ProductController = {
             console.error(error);
             res.status(500).send(error)
         }
+    },
+    async getAll(req, res){
+        try {
+            const productByName = await Product.findAll({
+                where:{
+                    name: req.params.name
+                }
+            })
+            res.send(productByName)
+        } catch (error) {
+            console.error(error);
+            res.status(500).send(error) 
+        }
+    },
+    async getAll(req, res){
+        try {
+            const productByPrice = await Product.findAll({
+                where:{
+                    price: req.params.price
+                }
+            })
+            res.send(productByPrice)
+        } catch (error) {
+            console.error(error);
+            res.status(500).send(error)  
+        }
     }
 }
 
