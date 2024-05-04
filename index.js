@@ -13,6 +13,7 @@ app.use('/id/:id', require('./routes/products'));
 app.use('/id/:id', require('./routes/products'));
 app.use('/name/:name', require('./routes/products'));
 app.use('/price/:price', require('./routes/products'));
+app.use('/price/', require('./routes/products'));
 
 app.use('/category', require('./routes/categories'));
 app.use('/category', require('./routes/categories'));

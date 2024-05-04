@@ -88,6 +88,19 @@ const ProductController = {
             console.error(error);
             res.status(500).send(error)  
         }
+    },
+    async getAll(req, res){
+        try {
+            const productDescPrice = await Product.findAll({
+                order:[
+                    ['price', 'DESC']
+                ]
+            })
+            res.send(productDescPrice)
+        } catch (error) {
+            console.error(error);
+            res.status(500).send(error)
+        }
     }
 }
 

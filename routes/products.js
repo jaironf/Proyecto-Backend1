@@ -9,6 +9,6 @@ router.get('/', ProductController.getAll);
 router.get('/id/:id', ProductController.getAll);
 router.get('/name/:name', ProductController.getAll);
 router.get('/price/:price', ProductController.getAll);
-
+router.get('/price/', ProductController.getAll);
 
 module.exports = router;
