@@ -49,6 +49,14 @@ const ProductController = {
             console.error(error);
             res.status(500).send(error)
         }
+    },
+    async getAll(req, res){//CREAR UN ENDPOINT QUE TRAIGA UN PRODUCTO POR SU ID
+        try {
+            const product = await Product.findAll()
+        } catch (error) {
+            console.error(error);
+            res.status(500).send(error)
+        }
     }
 }
 
