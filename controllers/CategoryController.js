@@ -59,6 +59,19 @@ const CategoryController = {
             console.error(error);
             res.status(500).send(error)
         }
+    },
+    async getAll(req, res){
+        try {
+            const categoryByName = await Category.findAll({
+                where:{
+                    name: req.params.name
+                }
+            })
+            res.send(categoryByName)
+        } catch (error) {
+            console.error(error);
+            res.status(500).send(error)
+        }
     }
 }
 

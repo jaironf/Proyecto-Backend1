@@ -15,5 +15,6 @@ app.use('/category', require('./routes/categories'));
 app.use('/category', require('./routes/categories'));
 app.use('/categories', require('./routes/categories'));
 app.use('/id/:id', require('./routes/categories'));
+app.use('/name/:name', require('./routes/categories'));
 
 app.listen(PORT, () => console.log(`Servidor levantado en el puerto ${PORT}`));
