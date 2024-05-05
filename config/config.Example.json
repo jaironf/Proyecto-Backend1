@@ -4,7 +4,8 @@
     "password": "tu contraseña",
     "database": "tu base de datos",
     "host": "tu host",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "jwt_secret": "mammamia"
   },
   "test": {
     "username": "root",

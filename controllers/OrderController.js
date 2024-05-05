@@ -10,7 +10,7 @@ const OrderController = {
             res.status(500).send(error)
         }
     },
-    async getAll(req,res){
+    async getAll(req,res){//CAMBIAR USER POR PRODUCTOS QUE TIENE
         try {
             const orders = await Order.findAll({
                 include:[{model: User, attributes:['name','email']}],
@@ -23,6 +23,6 @@ const OrderController = {
     }
 
 }
-//cambiar el include de user a product
+
 
 module.exports = OrderController;
