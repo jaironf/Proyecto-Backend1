@@ -1,4 +1,4 @@
-const {Order,User} = require('../models/index');
+const {Order,Product} = require('../models/index');
 
 const OrderController = {
     async create(req,res){
@@ -10,10 +10,10 @@ const OrderController = {
             res.status(500).send(error)
         }
     },
-    async getAll(req,res){//CAMBIAR USER POR PRODUCTOS QUE TIENE
+    async getAll(req,res){
         try {
             const orders = await Order.findAll({
-                include:[{model: User, attributes:['name','email']}],
+                include:[{model: Product, attributes:['name','price','genre'], through: { attributes: ['name'] }}],
             });
             res.send(orders)
         } catch (error) {
