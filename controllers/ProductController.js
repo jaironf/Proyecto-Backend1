@@ -50,7 +50,7 @@ const ProductController = {
             res.status(500).send(error)
         }
     },
-    async getAll(req, res){
+    async getById(req, res){
         try {
             const products = await Product.findAll({
                 where:{
@@ -63,7 +63,7 @@ const ProductController = {
             res.status(500).send(error)
         }
     },
-    async getAll(req, res){
+    async getByName(req, res){
         try {
             const productByName = await Product.findAll({
                 where:{
@@ -76,7 +76,7 @@ const ProductController = {
             res.status(500).send(error) 
         }
     },
-    async getAll(req, res){
+    async getByPrice(req, res){
         try {
             const productByPrice = await Product.findAll({
                 where:{
@@ -89,7 +89,7 @@ const ProductController = {
             res.status(500).send(error)  
         }
     },
-    async getAll(req, res){
+    async getByPriceDesc(req, res){
         try {
             const productDescPrice = await Product.findAll({
                 order:[

@@ -1,16 +1,15 @@
-const {User,Order,Token, sequelize} = require('../models/index');
+const {User,Order,Token, Sequelize} = require('../models/index.js');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const {jwt_secret} = require('../config/config.json')['development'];
-const {Op} = sequelize
+const {Op} = Sequelize;
 
 
 const UserController = {
      async create(req, res) {
         try {
-            req.body.role = "user";
-        const password = await bcrypt.hashSync(req.body.password, 10);
-        const user = await User.create({...req.body, password:password})
+        const password = bcrypt.hashSync(req.body.password, 10);
+        const user = await User.create({...req.body, password, role:"user"})
             res.status(201).send({ msg: 'Usuario creado con éxito', user })
         } catch (error) {
             console.error(error);
@@ -54,12 +53,12 @@ const UserController = {
     async logout(req, res){
         try {
             await Token.destroy({
-                where:{
+                where: {
                     [Op.and]: [
-                        {UserId: req.user.id},
-                        {token: req.header.authorization},
-                    ],
-                },
+                        { UserId: req.user.id },
+                        { token: req.headers.authorization }
+                    ]
+                }
             });
             res.send({msg: 'Desconectado con éxito'})
         } catch (error) {

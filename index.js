@@ -7,6 +7,7 @@ app.use(express.json())
 app.use('/users', require('./routes/users'));
 app.use('/orders', require('./routes/orders'));
 
+//Products
 app.use('/products', require('./routes/products'));
 app.use('/id/:id', require('./routes/products'));
 app.use('/id/:id', require('./routes/products'));
@@ -15,6 +16,7 @@ app.use('/name/:name', require('./routes/products'));
 app.use('/price/:price', require('./routes/products'));
 app.use('/price/', require('./routes/products'));
 
+//Categories
 app.use('/category', require('./routes/categories'));
 app.use('/category', require('./routes/categories'));
 app.use('/category', require('./routes/categories'));

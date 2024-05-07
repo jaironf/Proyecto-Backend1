@@ -13,7 +13,7 @@ const OrderController = {
     async getAll(req,res){
         try {
             const orders = await Order.findAll({
-                include:[{model: Product, attributes:['name','price','genre'], through: { attributes: ['name'] }}],
+                include:[{model: Product, attributes:['name','price','genre'], through: { attributes: [] }}],
             });
             res.send(orders)
         } catch (error) {
