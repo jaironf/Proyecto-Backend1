@@ -1,5 +1,8 @@
 # PROYECTO E-COMMERS
 
+<img align="center" alt="VaultBoy" height="150" width="120" src="./assets/imgs/imgVaultBoy.png">
+
+
 ## Descripción
 
 Este proyecto de Backend demuestra los conocimientos adquiridos en Node.js, Express.js, Sequelize y MySQL. El ejercicio propuesto consiste en una aplicación de comercio electrónico basada en videojuegos, donde se aplicarán los operadores CRUD (create, read, update y delete) a Usuarios, Pedidos, Productos y Categorías.
