@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const PORT = 3001
+const { typeError } = require('./middleware/errors');
 
 app.use(express.json())
 
@@ -23,5 +24,8 @@ app.use('/category', require('./routes/categories'));
 app.use('/categories', require('./routes/categories'));
 app.use('/id/:id', require('./routes/categories'));
 app.use('/name/:name', require('./routes/categories'));
+
+
+app.use(typeError)
 
 app.listen(PORT, () => console.log(`Servidor levantado en el puerto ${PORT}`));

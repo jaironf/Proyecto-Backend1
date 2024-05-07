@@ -25,6 +25,9 @@ module.exports = (sequelize, DataTypes) => {
       notNull:{
         msg: 'Por favor introduce tu correo'
       },
+      isEmail:{
+        msg: 'Por favor introduce un correo valido'
+      }
      },
     } ,
     password:{
