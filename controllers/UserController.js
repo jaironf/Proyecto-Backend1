@@ -20,7 +20,7 @@ const UserController = {
     async getAll(req, res){
         try {
             const users = await User.findAll({
-                include:[{model:Order, attributes:['title', 'order_number']}]
+                include:[{model:Order, attributes:['title', 'order_number']}],
             })
             res.send({msg:'Todos los usuarios', users})
         } catch (error) {
