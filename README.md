@@ -17,6 +17,10 @@ Este proyecto de Backend demuestra los conocimientos adquiridos en Node.js, Expr
 - Bcryptjs
 - jsonwebtoken
 
+## Documentación API
+
+[Documentación Endpoints](https://documenter.getpostman.com/view/34523110/2sA3JJ9iea)
+
 ## Diagrama
 
 Para este proyecto he creado un diagrama donde se pueden ver diferentes tablas y como se relacionan entre ellas.
